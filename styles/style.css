@@ -37,6 +37,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   color: var(--accent-color);
 }
 
@@ -45,7 +46,7 @@
   border: 2px solid var(--accent-color);
   inline-size: clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem);
   margin: 100px auto;
-  font-family: "PressStar", sans-serif;
+  font-family: "PressStar", fantasy;
   text-align: center;
   padding-block-start: clamp(7.375rem, 6.9569rem + 1.784vw, 8.5625rem);
 }
@@ -56,7 +57,7 @@
   }
 }
 
-.html {
+.logo {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   line-height: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
@@ -75,6 +76,7 @@
   padding-block: 22px;
   max-inline-size: 84px;
   margin: auto;
+  align-items: flex-start;
 }
 
 .theme-menu__button {
@@ -83,15 +85,16 @@
   font-size: 14px;
   line-height: 14px;
   text-align: start;
-  width: 100%;
   padding: 0 0 0 10px;
   border: none;
   background-color: transparent;
   text-transform: uppercase;
+  opacity: 1;
+  transition: opacity 0.3s;
 }
 
 .theme-menu__button:hover {
-  animation: fading 0.3s ease forwards;
+  opacity: 0.6;
 }
 
 .theme-menu__button:focus {
@@ -115,7 +118,7 @@
 }
 
 .theme-menu__button:disabled {
-  animation: fading 0.3s ease forwards;
+  opacity: 0.6;
   pointer-events: none;
 }
 
@@ -132,6 +135,7 @@
   gap: 50px;
   align-items: center;
 }
+
 .card {
   inline-size: clamp(23.4375rem, 16.1972rem + 30.892vw, 44rem);
   background-color: var(--bg-color);
@@ -151,7 +155,7 @@
 .decoration {
   z-index: 1;
   position: absolute;
-  font-family: "PressStar", sans-serif;
+  font-family: "PressStar", fantasy;
   font-size: 14px;
   line-height: 14px;
   color: var(--accent-color);
@@ -190,32 +194,32 @@
   border: 2px solid var(--accent-color);
 }
 
-.first-track-image-1 {
+.filter-sepia {
   filter: sepia(80%);
 }
 
-.first-track-image-2 {
+.filter-saturate {
   filter: saturate(400%);
 }
 
-.second-track-image-1 {
+.filter-sepia-saturate {
   filter: sepia(40%) saturate(150%);
 }
 
-.second-track-image-2 {
+.filter-invert {
   filter: invert(0.7);
 }
 
-.third-track-image-1 {
+.filter-grayscale-sepia {
   filter: grayscale(0.7) sepia(80%);
 }
 
-.third-track-image-2 {
+.filter-blur {
   filter: blur(0.8em);
 }
 
-.fourth-track-image {
-  filter: invert(0.7);
+.filter-invert-grayscale {
+  filter: invert(0.7) grayscale(0.7);
 }
 
 .card_content {
@@ -236,7 +240,7 @@
 
 .button {
   cursor: pointer;
-  font-family: "PressStar", sans-serif;
+  font-family: "PressStar", fantasy;
   font-size: 14px;
   border: 2px solid var(--accent-color);
   position: relative;
@@ -247,7 +251,6 @@
 .button:focus {
   outline: none;
   box-shadow: 2px 2px 0 0 var(--accent-color);
-  transition: box-shadow 0.3s;
 }
 
 .button::after {
@@ -260,7 +263,7 @@
   transform: scaleX(0);
   transform-origin: left;
   background-color: var(--accent-color);
-  transition: transform 0.3s;
+  transition: transform 0.5s ease-in-out;
 }
 
 .button:hover::after {
@@ -272,6 +275,10 @@
   mix-blend-mode: difference;
   color: var(--button-text-color);
   z-index: 1;
+}
+
+.button__text-dialog {
+  text-transform: uppercase;
 }
 
 .card__like-button {
@@ -287,17 +294,16 @@
   align-items: center;
   background-color: transparent;
   border: 2px solid transparent;
+  transition: border 0.3s;
 }
 
 .card__icon-button:focus {
   outline: none;
   border: 2px solid transparent;
-  transition: border 0.3s;
 }
 
 .card__icon-button:focus-visible {
   border: 2px solid var(--accent-color);
-  transition: border 0.3s;
 }
 
 .like-icon {
@@ -346,7 +352,7 @@
 
 .like-icon.is-liked .contour {
   fill: var(--heart-fill);
-  transition: 0.3s 0.06s linear;
+  transition: 0.3s 0.11s linear;
 }
 
 .like-icon:not(.is-liked) .contour {
@@ -355,6 +361,7 @@
 }
 
 .like-icon.is-liked .heart {
+  transform-origin: center;
   animation: heart-scale 0.3s 0.1s ease-in;
 }
 
@@ -367,19 +374,19 @@
 }
 
 .save-dialog {
-  padding-inline: 30px;
-  min-block-size: 191px;
   inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
   background-color: var(--bg-color);
   border: 2px solid var(--accent-color);
   color: var(--accent-color);
   font-size: 14px;
-  font-family: "PressStar", sans-serif;
+  font-family: "PressStar", fantasy;
 }
 
 .save-dialog[open] {
   display: flex;
   flex-direction: column;
+  gap: 30px;
+  padding: 30px;
   align-items: flex-start;
   justify-content: space-evenly;
 }
@@ -389,11 +396,12 @@
 }
 
 .save-dialog_text {
+  max-inline-size: 293px;
   display: flex;
   line-height: 21px;
   text-transform: uppercase;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
 }
 
 .save-dialog_button {
