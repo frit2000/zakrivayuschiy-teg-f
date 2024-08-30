@@ -190,9 +190,6 @@
   border: 2px solid var(--accent-color);
 }
 
-.zero-track-filter {
-}
-
 .first-track-image-1 {
   filter: sepia(80%);
 }
