@@ -486,8 +486,7 @@
           </div>
           <div class="card_content">
             <p>
-              Сейчас вы уже очень много знаете о вёрстке. Но это только
-              начало.<br />
+              Сейчас вы уже очень много знаете о вёрстке. Но это только начало.
               Во-первых, впереди ещё много материала про «красотищу». Во-вторых,
               с окончанием курса учёба не заканчивается. Вёрстка — это целый
               мир. И этот мир постоянно меняется. Познать его полностью не
@@ -540,49 +539,49 @@
           </div>
         </li>
       </ul>
-    </main>
-    <footer class="footer">
-      <button
-        type="button"
-        onclick="window['dialog-id'].showModal()"
-        aria-controls="dialog-id"
-        class="button footer__button"
-      >
-        <span class="button__text footer__button_text">
-          <svg
-            class="footer__floppy"
-            viewBox="0 0 21 21"
-            width="21"
-            height="21"
-            fill="var(--button-text-color)"
-          >
-            <use href="./svg/floppy.svg#floppy"></use>
-          </svg>
-          <span>Сохранить на память</span>
-        </span>
-      </button>
-      <dialog class="save-dialog" id="dialog-id">
-        <div class="save-dialog_text">
-          <svg
-            class="save-dialog_floppy"
-            viewBox="0 0 21 21"
-            width="21"
-            height="21"
-            fill="var(--accent-color)"
-          >
-            <use href="./svg/floppy.svg#floppy"></use>
-          </svg>
-          <p>Вставьте дискету, чтобы продолжить</p>
-        </div>
+      <div class="save">
         <button
-          class="button save-dialog_button"
           type="button"
-          onclick="window['dialog-id'].close()"
+          onclick="window['dialog-id'].showModal()"
+          aria-controls="dialog-id"
+          class="button save__button"
         >
-          <span class="button__text button__text-dialog">ok</span>
+          <div class="save__button_text">
+            <svg
+              class="button__text save__floppy"
+              viewBox="0 0 21 21"
+              width="21"
+              height="21"
+              fill="var(--button-text-color)"
+            >
+              <use href="./svg/floppy.svg#floppy"></use>
+            </svg>
+            <span class="button__text">Сохранить на память</span>
+          </div>
         </button>
-      </dialog>
-    </footer>
+        <dialog class="save-dialog" id="dialog-id">
+          <div class="save-dialog_text">
+            <svg
+              class="save-dialog_floppy"
+              viewBox="0 0 21 21"
+              width="21"
+              height="21"
+              fill="var(--accent-color)"
+            >
+              <use href="./svg/floppy.svg#floppy"></use>
+            </svg>
+            <p>Вставьте дискету, чтобы продолжить</p>
+          </div>
+          <button
+            class="button save-dialog_button"
+            type="button"
+            onclick="window['dialog-id'].close()"
+          >
+            <span class="button__text button__text-dialog">ok</span>
+          </button>
+        </dialog>
+      </div>
+    </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>

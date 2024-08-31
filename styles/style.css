@@ -352,7 +352,7 @@
 
 .like-icon.is-liked .contour {
   fill: var(--heart-fill);
-  transition: 0.3s 0.11s linear;
+  transition: 0.3s 0.06s linear;
 }
 
 .like-icon:not(.is-liked) .contour {
@@ -417,14 +417,14 @@
   min-inline-size: 39px;
 }
 
-.footer {
+.save {
   display: flex;
   justify-content: center;
   margin-block-end: clamp(6.5625rem, 6.6725rem + -0.4695vw, 6.25rem);
   margin-block-start: clamp(3.25rem, 3.294rem + -0.1878vw, 3.125rem);
 }
 
-.footer__button {
+.save__button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -434,7 +434,7 @@
   min-block-size: 55px;
 }
 
-.footer__button_text {
+.save__button_text {
   display: flex;
   gap: 8px;
   justify-content: center;
@@ -442,12 +442,12 @@
 }
 
 @media (width <376px) {
-  .footer__button_text {
+  .save__button_text {
     flex-direction: column;
     min-block-size: 84px;
   }
 
-  .footer__floppy {
+  .save__floppy {
     min-block-size: 28px;
     min-inline-size: 28px;
   }
