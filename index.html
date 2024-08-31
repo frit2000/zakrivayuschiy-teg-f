@@ -544,20 +544,18 @@
           type="button"
           onclick="window['dialog-id'].showModal()"
           aria-controls="dialog-id"
-          class="button save__button"
+          class="button save__button save__button_text"
         >
-          <div class="save__button_text">
-            <svg
-              class="button__text save__floppy"
-              viewBox="0 0 21 21"
-              width="21"
-              height="21"
-              fill="var(--button-text-color)"
-            >
-              <use href="./svg/floppy.svg#floppy"></use>
-            </svg>
-            <span class="button__text">Сохранить на память</span>
-          </div>
+          <svg
+            class="button__text save__floppy"
+            viewBox="0 0 21 21"
+            width="21"
+            height="21"
+            fill="var(--button-text-color)"
+          >
+            <use href="./svg/floppy.svg#floppy"></use>
+          </svg>
+          <span class="button__text">Сохранить на память</span>
         </button>
         <dialog class="save-dialog" id="dialog-id">
           <div class="save-dialog_text">
