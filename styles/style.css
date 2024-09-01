@@ -432,13 +432,7 @@
   background-color: var(--bg-color);
   inline-size: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
   min-block-size: 55px;
-}
-
-.save__button_text {
-  display: flex;
   gap: 8px;
-  justify-content: center;
-  align-items: center;
 }
 
 @media (width <376px) {
